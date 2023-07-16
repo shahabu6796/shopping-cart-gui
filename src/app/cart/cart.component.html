@@ -1,0 +1,38 @@
+<h1>Your cart</h1>
+<div *ngIf="getCart().length === 0">Your cart is empty</div>
+<div *ngIf="getCart().length > 0">
+  <div class="grid grid-cols-4 gap-4">
+    <ng-container *ngFor="let book of getCart(); let i = index;">
+      <div class="border p-4">
+        <div class="flex items-center justify-between mb-4">
+          <p class="text-blue-500 text-lg font-bold">{{ book.name }}</p>
+          <img class="w-20 h-30" src={{book.src}} alt="Book Image">
+        </div>
+        <p class="price">Price: {{ book.price }}</p>
+        <div class="flex items-center">
+          <button class="quantity-button" (click)="decreaseQuantity(book)">
+            <i class="fas fa-minus"></i>
+          </button>
+          <p class="quantity">{{ book.quantity }}</p>
+          <button class="quantity-button" (click)="increaseQuantity(book)">
+            <i class="fas fa-plus"></i>
+          </button>
+        </div>
+      </div>
+      <!-- Show the "Place Order" button on the last book -->
+      <div *ngIf="i === getCart().length - 1">
+        <div class="mb-4" >
+            <label class="block text-gray-500 text-sm font-bold mb-1" for="placedAmount">
+                Total Amount:
+            </label>
+            <input
+                class="shadow appearance-none border rounded w-1/2 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="placedAmount" type="text" [(ngModel)]="placedAmount" name="placedAmount" [disabled]=true>
+        </div>
+        <button  class="place-order-button bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2" (click)="placeOrder()">
+            Place Order
+          </button>
+      </div>
+    </ng-container>
+  </div>
+</div>

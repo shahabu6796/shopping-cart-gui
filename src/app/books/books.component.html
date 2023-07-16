@@ -1,0 +1,10 @@
+<div class="min-h-screen flex items-center justify-center">
+    <ul *ngIf="isShowing" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <ng-container *ngFor="let book of books; let i=index">
+        <li class="">
+            <app-book [book]="book"></app-book>
+        </li>
+      </ng-container>
+    </ul>
+  </div>
+  

@@ -1,0 +1,12 @@
+.place_order {
+    background: #fb641b;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
+    border: none;
+    color: #fff;
+    width: 10;
+    height: 10;
+  }
+.price{
+    color: blue;
+  }
+  

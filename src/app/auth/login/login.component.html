@@ -1,0 +1,44 @@
+<div class="flex justify-center items-center h-screen">
+    <form class="bg-white shadow-md rounded px-10 py-8">
+      <div class="mb-6">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+          Email
+        </label>
+        <input
+          class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          id="email"
+          type="email"
+          placeholder="Enter your email address"
+          [(ngModel)]="user.email"
+          [ngModelOptions]="{ standalone: true }"
+        >
+      </div>
+      <div class="mb-6">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+          Password
+        </label>
+        <input
+          class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          id="password"
+          type="password"
+          placeholder="Enter your password"
+          [(ngModel)]="user.password"
+          [ngModelOptions]="{ standalone: true }"
+        >
+      </div>
+      <div class="flex items-center justify-between">
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded focus:outline-none focus:shadow-outline" type="button" (click)="login()">
+          Login
+        </button>
+        <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="/resetpassword">
+          Forgot Password?
+        </a>
+      </div>
+      <div>
+        <a class="inline-block  font-bold text-sm text-gray-600 hover:text-blue-800" href="/register">
+          create a account?
+        </a>
+      </div>
+    </form>
+  </div>
+  

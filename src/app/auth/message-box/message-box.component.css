@@ -1,0 +1,22 @@
+.message-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px; /* Adjust the height as needed */
+  }
+  
+  .message-content {
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  .success {
+    background-color: green;
+  }
+  
+  .error {
+    background-color: red;
+  }
+  

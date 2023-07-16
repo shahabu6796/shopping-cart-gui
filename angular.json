@@ -13,7 +13,8 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/my-app",
+            "outputPath": "docs",
+            "baseHref": "/MYAPP/",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -58,6 +59,10 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "your-project-name:build",
+            "port": 3000
+          },
           "configurations": {
             "production": {
               "browserTarget": "MyApp:build:production"
